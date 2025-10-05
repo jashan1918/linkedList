@@ -33,8 +33,25 @@ class LinkedList {
             this.tail = newNode;
         }
     }
+
+    prepend(value) {
+
+        let newNode = new Node(value);
+
+        if(this.head === null) {            
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.nextNode = this.head;
+            this.head = newNode;
+            
+        }
+    }
 }
 
 const list = new LinkedList();
 
+list.prepend("cat")
 
+console.log(list);
