@@ -257,6 +257,71 @@ toString() {
 
     }
 
+    removeAt(index) {
+
+
+        const size = this.size();
+        console.log(size);
+        //if the list is empty
+        if(this.head === null) {
+
+            console.log("Nothing to remove");
+            return;
+        }
+
+        //if the index is removing the head
+
+        if(index === 0) {
+
+            if(this.size() === 1) {
+
+                this.head = null;
+                this.tail = null;
+                return;
+            }
+            else {
+                this.head = this.head.nextNode
+                return;
+            }
+        }
+
+     
+
+        let count = 0;
+        let currentNode = this.head;
+
+           //if index is the tail
+
+
+        if (index === size - 2){
+
+            while(count < index) {
+                currentNode = currentNode.nextNode;
+                count++;
+            }
+
+            this.tail = currentNode;
+            currentNode.nextNode = null;
+            return
+        }
+
+        // if the index is smaller than 0 or bigger than the linked list
+
+        if(index < 0 || index > size - 1){
+
+            console.log("Nah not happening");
+            return;
+        }
+
+        while(count < index - 1) {
+            
+            currentNode = currentNode.nextNode;
+            count++
+        }
+        currentNode.nextNode = currentNode.nextNode.nextNode;
+
+    }
+
 
 }
 
@@ -268,6 +333,9 @@ list.append("D")
 list.append("E");
 
 list.insertAt("doggy", 4);
+list.toString();
+
+list.removeAt(6);
 list.toString();
 
 // list.toString();
