@@ -94,6 +94,40 @@ class LinkedList {
         return currentNode;
     }
 
+    pop() {
+        //check if the list is empty
+
+        if (this.head === null) {
+            return console.log("The list is empty!")
+        }
+
+            //edge case if there is only a single node
+        if (this.head === this.tail) {
+    const poppedNode = this.head;
+    this.head = null;
+    this.tail = null;
+    return poppedNode;
+}
+
+
+        //traverse through the array to reach the second last node
+
+        let currentNode = this.head;
+
+        while(currentNode.nextNode !== this.tail) {
+            currentNode = currentNode.nextNode;
+        }
+
+        //change the properties
+        const poppedNode = this.tail;
+        this.tail = currentNode;
+        currentNode.nextNode = null;
+
+        return poppedNode;
+    }
+
+    
+
 }
 
 const list = new LinkedList();
@@ -102,8 +136,14 @@ list.append("no2")
 list.prepend("no.0")
 
 
-const i = list.at(2);
-console.log(i);
+
+const popp =list.pop();
+console.log(popp)
+
+console.log(list);
+
+// const i = list.at(2);
+// console.log(i);
 
 
 // console.log(list)
