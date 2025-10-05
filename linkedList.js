@@ -82,6 +82,18 @@ class LinkedList {
         }
     }
 
+    at(index) {
+        let count = 0;
+        let currentNode = this.head;
+
+        while(currentNode !== null && count < index) {
+
+            currentNode = currentNode.nextNode;
+            count++;
+        }
+        return currentNode;
+    }
+
 }
 
 const list = new LinkedList();
@@ -89,13 +101,18 @@ list.append("no1")
 list.append("no2")
 list.prepend("no.0")
 
-console.log(list)
 
-const listSize = list.size();
-console.log(listSize);
+const i = list.at(2);
+console.log(i);
 
-const head = list.getHead()
-console.log(head);
 
-const tail = list.getTail();
-console.log(tail);
+// console.log(list)
+
+// const listSize = list.size();
+// console.log(listSize);
+
+// const head = list.getHead()
+// console.log(head);
+
+// const tail = list.getTail();
+// console.log(tail);
