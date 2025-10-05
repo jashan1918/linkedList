@@ -325,18 +325,18 @@ toString() {
 
 }
 
-const list = new LinkedList();
-list.append("B")
-list.append("C")
-list.prepend("A")
-list.append("D")
-list.append("E");
+// const list = new LinkedList();
+// list.append("B")
+// list.append("C")
+// list.prepend("A")
+// list.append("D")
+// list.append("E");
 
-list.insertAt("doggy", 4);
-list.toString();
+// list.insertAt("doggy", 4);
+// list.toString();
 
-list.removeAt(6);
-list.toString();
+// list.removeAt(6);
+// list.toString();
 
 // list.toString();
 
@@ -367,3 +367,6 @@ list.toString();
 
 // const tail = list.getTail();
 // console.log(tail);
+
+
+export default LinkedList;
