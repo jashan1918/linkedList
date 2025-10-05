@@ -195,14 +195,82 @@ toString() {
     console.log(result);
 }
 
+//extra credit
+
+    insertAt(value, index) {
+
+          const cnt = this.size();
+
+         //check if it is smaller than 0 or greater then the list
+        
+        if(index < 0 || index > cnt) {
+
+            console.log("don't be silly");
+            return;
+        }
+
+
+        const newNode = new Node(value);
+
+                if(this.head === null) {
+
+            if(index === 0) {
+                
+                this.head = newNode;
+                this.tail = newNode;
+            }
+            else {
+                 console.log("the index is out of bounds : the list is empty")
+                 return;
+            }
+        }
+
+
+        //if index is 0
+
+        if(index === 0) {
+            newNode.nextNode = this.head;
+            this.head = newNode;
+            return;
+        }
+
+        //check if the index is equal to the size of the list then we append at the end
+
+      
+        if(index === cnt) {
+            this.tail.nextNode = newNode
+            this.tail = newNode;
+            return;
+        }
+
+  
+        let count = 1;
+        let currentNode = this.head;
+
+        while(count < index) {
+
+            currentNode = currentNode.nextNode;
+            count++;
+        }
+        newNode.nextNode = currentNode.nextNode;
+        currentNode.nextNode = newNode;
+
+    }
+
+
 }
 
 const list = new LinkedList();
-list.append("no1")
-list.append("no2")
-list.prepend("no.0")
+list.append("B")
+list.append("C")
+list.prepend("A")
+list.append("D")
+list.append("E");
 
+list.insertAt("doggy", 4);
 list.toString();
+
+// list.toString();
 
 // const index = list.find("no2");
 // console.log(index);
