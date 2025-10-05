@@ -71,6 +71,17 @@ class LinkedList {
         }
     }
 
+     getTail() {
+        
+        if(this.head === null) {
+            return console.log("The list is empty");
+        }
+
+        else{
+            return this.tail;
+        }
+    }
+
 }
 
 const list = new LinkedList();
@@ -85,3 +96,6 @@ console.log(listSize);
 
 const head = list.getHead()
 console.log(head);
+
+const tail = list.getTail();
+console.log(tail);
