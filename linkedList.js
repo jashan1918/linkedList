@@ -178,6 +178,23 @@ class LinkedList {
         return null;
     }
 
+toString() {
+    if (this.head === null) {
+        return console.log("The list is empty!!");
+    }
+
+    let currentNode = this.head;
+    let result = "";
+
+    while (currentNode !== null) {
+        result += `(${currentNode.value.toString()}) -> `;
+        currentNode = currentNode.nextNode;
+    }
+
+    result += "null";
+    console.log(result);
+}
+
 }
 
 const list = new LinkedList();
@@ -185,8 +202,10 @@ list.append("no1")
 list.append("no2")
 list.prepend("no.0")
 
-const index = list.find("no2");
-console.log(index);
+list.toString();
+
+// const index = list.find("no2");
+// console.log(index);
 
 
 // const check = list.contains("no1asdf");
